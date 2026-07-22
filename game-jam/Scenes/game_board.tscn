@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://dupcq3giuloml"]
 
 [ext_resource type="Texture2D" uid="uid://dj0ubkehojo7j" path="res://greenSquare.png" id="1_xrvgy"]
+[ext_resource type="PackedScene" uid="uid://ystgh13h843c" path="res://Scenes/Enemies/Slime_enemy_jumper.tscn" id="2_0amks"]
 [ext_resource type="Texture2D" uid="uid://cbcgdwkhpsa18" path="res://blackSquare.png" id="2_i37i2"]
+[ext_resource type="PackedScene" uid="uid://clkuoq56ry710" path="res://Scenes/Enemies/slime_enemy.tscn" id="2_nhcq1"]
+[ext_resource type="PackedScene" uid="uid://bkpny8grctlse" path="res://Scenes/Enemies/enemy_spawner.tscn" id="3_xh13x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7pxhf"]
 size = Vector2(1188, 127)
@@ -13,6 +16,14 @@ size = Vector2(41, 592)
 size = Vector2(99, 635)
 
 [node name="GameBoard" type="Node" unique_id=670092421]
+
+[node name="EnemySpawner" parent="." unique_id=663897635 instance=ExtResource("3_xh13x")]
+position = Vector2(82, 405)
+EnemyScene = ExtResource("2_0amks")
+
+[node name="EnemySpawner2" parent="." unique_id=963898892 instance=ExtResource("3_xh13x")]
+position = Vector2(1025, 405)
+EnemyScene = ExtResource("2_nhcq1")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=724811684]
 position = Vector2(0, 650)
@@ -40,5 +51,23 @@ texture = ExtResource("2_i37i2")
 [node name="Area2D" type="Area2D" parent="StaticBody2D2" unique_id=1579874378]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2/Area2D" unique_id=1847041064]
+position = Vector2(-13.5, 275.5)
+shape = SubResource("RectangleShape2D_02sbd")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1842308738]
+position = Vector2(1186, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1739136022]
+position = Vector2(-14.5, 287)
+shape = SubResource("RectangleShape2D_ccwub")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3" unique_id=1053128622]
+position = Vector2(-16, 279)
+scale = Vector2(1.5199999, 12.16)
+texture = ExtResource("2_i37i2")
+
+[node name="Area2D" type="Area2D" parent="StaticBody2D3" unique_id=568653420]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3/Area2D" unique_id=387984459]
 position = Vector2(-13.5, 275.5)
 shape = SubResource("RectangleShape2D_02sbd")

@@ -8,8 +8,16 @@ public partial class PlayerController : CharacterBody2D
 	public bool TouchingWall = false;
 
     public override void _Process(double delta)
-    {
-    }
+	{
+		if (Input.IsActionJustPressed("ui_left"))
+		{
+			GetNode<Sword>("Sword").Position = new Vector2(-25, 0);
+		}
+		if (Input.IsActionJustPressed("ui_right"))
+		{
+			GetNode<Sword>("Sword").Position = new Vector2(25, 0);
+		}
+	}
 
 
 	public override void _PhysicsProcess(double delta)

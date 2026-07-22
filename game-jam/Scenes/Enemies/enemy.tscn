@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://d3m6c4je48grl"]
+
+[ext_resource type="Script" uid="uid://bsx1n2haothnj" path="res://Scripts/Enemy.cs" id="1_613su"]
+[ext_resource type="Texture2D" uid="uid://n3b5tkdvnp1o" path="res://icon.svg" id="2_jcvw6"]
+[ext_resource type="PackedScene" uid="uid://bpfw8grqkphbc" path="res://Scenes/HealthComponent.tscn" id="3_x1rqp"]
+[ext_resource type="PackedScene" uid="uid://bpb2i83abfgfl" path="res://Scenes/HurtboxComponent.tscn" id="4_ubio8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7pxhf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ubio8"]
+radius = 60.0
+height = 144.0
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1188923134 node_paths=PackedStringArray("HealthComponent", "HurtboxComponent")]
+script = ExtResource("1_613su")
+HealthComponent = NodePath("HealthComponent")
+HurtboxComponent = NodePath("Area2D/HurtboxComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1371091971]
+shape = SubResource("CapsuleShape2D_7pxhf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=814247910]
+texture = ExtResource("2_jcvw6")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1161639594]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1208158933]
+shape = SubResource("CapsuleShape2D_ubio8")
+
+[node name="HurtboxComponent" parent="Area2D" unique_id=453113370 instance=ExtResource("4_ubio8")]
+
+[node name="HealthComponent" parent="." unique_id=1217182498 instance=ExtResource("3_x1rqp")]

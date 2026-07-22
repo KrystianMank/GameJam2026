@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bkpny8grctlse"]
+
+[ext_resource type="Script" uid="uid://xpgnb4om6mbq" path="res://Scripts/EnemySpawner.cs" id="1_ewhtn"]
+[ext_resource type="PackedScene" uid="uid://d3m6c4je48grl" path="res://Scenes/Enemies/enemy.tscn" id="2_pk4yh"]
+
+[node name="EnemySpawner" type="Node2D" unique_id=963898892]
+script = ExtResource("1_ewhtn")
+EnemyScene = ExtResource("2_pk4yh")
+
+[node name="Label" type="Label" parent="." unique_id=2076677831]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Spawner"

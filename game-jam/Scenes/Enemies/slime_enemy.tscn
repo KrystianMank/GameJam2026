@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://clkuoq56ry710"]
+
+[ext_resource type="Script" uid="uid://co4fu343q72jj" path="res://Scripts/SlimeEnemy.cs" id="1_p6sbt"]
+[ext_resource type="Texture2D" uid="uid://n3b5tkdvnp1o" path="res://icon.svg" id="2_5uyk1"]
+[ext_resource type="PackedScene" uid="uid://bpb2i83abfgfl" path="res://Scenes/HurtboxComponent.tscn" id="3_1u7tg"]
+[ext_resource type="PackedScene" uid="uid://bpfw8grqkphbc" path="res://Scenes/HealthComponent.tscn" id="3_sv1en"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7pxhf"]
+radius = 43.0
+height = 86.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ccwub"]
+radius = 60.0
+height = 144.0
+
+[node name="SlimeEnemy" type="CharacterBody2D" unique_id=1188923134 node_paths=PackedStringArray("HealthComponent", "HurtboxComponent")]
+script = ExtResource("1_p6sbt")
+HealthComponent = NodePath("HealthComponent")
+HurtboxComponent = NodePath("Area2D/HurtboxComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1371091971]
+shape = SubResource("CapsuleShape2D_7pxhf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1001545290]
+texture = ExtResource("2_5uyk1")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1468634778]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1679637093]
+shape = SubResource("CapsuleShape2D_ccwub")
+
+[node name="HurtboxComponent" parent="Area2D" unique_id=453113370 instance=ExtResource("3_1u7tg")]
+
+[node name="HealthComponent" parent="." unique_id=1217182498 instance=ExtResource("3_sv1en")]
+
+[node name="Timer" type="Timer" parent="." unique_id=1880824580]
+wait_time = 5.0
+autostart = true
+
+[connection signal="area_entered" from="Area2D" to="." method="OnArea2DAreaEntered"]
+[connection signal="timeout" from="Timer" to="." method="OnTimerTimeout"]
