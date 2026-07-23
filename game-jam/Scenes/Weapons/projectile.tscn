@@ -1,18 +1,22 @@
 [gd_scene format=3 uid="uid://bj25k1pwrrgcf"]
 
 [ext_resource type="Script" uid="uid://crm5qjntc387q" path="res://Scripts/Weapons/Projectile.cs" id="1_a85iw"]
+[ext_resource type="PackedScene" uid="uid://be8qp61r15cll" path="res://Scenes/Components/HitboxComponent.tscn" id="2_u1pgf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ccwub"]
-size = Vector2(147, 20)
+size = Vector2(55, 21)
 
-[node name="Projectile" type="CharacterBody2D" unique_id=1505901386]
+[node name="Projectile" type="Area2D" unique_id=1451600241 node_paths=PackedStringArray("HitboxComponent")]
 script = ExtResource("1_a85iw")
+HitboxComponent = NodePath("HitboxComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1373197943]
 shape = SubResource("RectangleShape2D_ccwub")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=725793664]
-offset_left = -67.0
+offset_left = -21.0
 offset_top = -7.0
-offset_right = 68.0
+offset_right = 28.0
 offset_bottom = 7.0
+
+[node name="HitboxComponent" parent="." unique_id=1502605101 instance=ExtResource("2_u1pgf")]

@@ -9,13 +9,17 @@ public partial class PlayerController : CharacterBody2D
 
     public override void _Process(double delta)
 	{
+		var weapon = GetNode<Weapon>("WeaponPivot/Weapon");
+		var weaponPivot = GetNode<Node2D>("WeaponPivot");
 		if (Input.IsActionJustPressed("ui_left"))
 		{
-			GetNode<Weapon>("Weapon").Position = new Vector2(-25, 0);
+			weapon.Position = new Vector2(-25, 0);
+			weapon.GetNode<Sprite2D>("Node2D/Sprite2D").FlipH = true;
 		}
 		if (Input.IsActionJustPressed("ui_right"))
 		{
-			GetNode<Weapon>("Weapon").Position = new Vector2(25, 0);
+			weapon.Position = new Vector2(25, 0);
+			weapon.GetNode<Sprite2D>("Node2D/Sprite2D").FlipH = false;
 		}
 	}
 

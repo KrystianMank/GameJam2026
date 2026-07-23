@@ -33,6 +33,10 @@ public partial class SlimeEnemy : Enemy
         {
             HurtboxComponent.DealDamage(sword.HitboxComponent.Damage);
         }
+        if(area is Projectile projectile)
+        {
+            HurtboxComponent.DealDamage(projectile.HitboxComponent.Damage);
+        }
     }
 
     public void OnTimerTimeout()

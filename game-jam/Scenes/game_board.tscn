@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dupcq3giuloml"]
 
-[ext_resource type="Texture2D" uid="uid://dj0ubkehojo7j" path="res://greenSquare.png" id="1_xrvgy"]
+[ext_resource type="Texture2D" uid="uid://dj0ubkehojo7j" path="res://Sprites/greenSquare.png" id="1_xrvgy"]
 [ext_resource type="PackedScene" uid="uid://ystgh13h843c" path="res://Scenes/Enemies/Slime_enemy_jumper.tscn" id="2_0amks"]
-[ext_resource type="Texture2D" uid="uid://cbcgdwkhpsa18" path="res://blackSquare.png" id="2_i37i2"]
+[ext_resource type="Texture2D" uid="uid://cbcgdwkhpsa18" path="res://Sprites/blackSquare.png" id="2_i37i2"]
 [ext_resource type="PackedScene" uid="uid://clkuoq56ry710" path="res://Scenes/Enemies/slime_enemy.tscn" id="2_nhcq1"]
 [ext_resource type="PackedScene" uid="uid://bkpny8grctlse" path="res://Scenes/Enemies/enemy_spawner.tscn" id="3_xh13x"]
 

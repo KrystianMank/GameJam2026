@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ystgh13h843c"]
 
 [ext_resource type="Script" uid="uid://dp04187x5hw77" path="res://Scripts/Enemy/SlimeEnemyJumper.cs" id="1_216h8"]
-[ext_resource type="Texture2D" uid="uid://d27wuqy1bmjfe" path="res://sword.png" id="2_216h8"]
+[ext_resource type="Texture2D" uid="uid://d27wuqy1bmjfe" path="res://Sprites/sword.png" id="2_216h8"]
 [ext_resource type="PackedScene" uid="uid://bpb2i83abfgfl" path="res://Scenes/Components/HurtboxComponent.tscn" id="3_lgg1a"]
 [ext_resource type="PackedScene" uid="uid://bpfw8grqkphbc" path="res://Scenes/Components/HealthComponent.tscn" id="4_sjcks"]
 
