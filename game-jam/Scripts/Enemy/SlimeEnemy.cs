@@ -35,6 +35,7 @@ public partial class SlimeEnemy : Enemy
         }
         if(area is Projectile projectile)
         {
+            GD.Print("dd");
             HurtboxComponent.DealDamage(projectile.HitboxComponent.Damage);
         }
     }
