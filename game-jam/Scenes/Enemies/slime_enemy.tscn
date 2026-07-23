@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://clkuoq56ry710"]
 
-[ext_resource type="Script" uid="uid://co4fu343q72jj" path="res://Scripts/SlimeEnemy.cs" id="1_p6sbt"]
+[ext_resource type="Script" uid="uid://co4fu343q72jj" path="res://Scripts/Enemy/SlimeEnemy.cs" id="1_p6sbt"]
 [ext_resource type="Texture2D" uid="uid://n3b5tkdvnp1o" path="res://icon.svg" id="2_5uyk1"]
-[ext_resource type="PackedScene" uid="uid://bpb2i83abfgfl" path="res://Scenes/HurtboxComponent.tscn" id="3_1u7tg"]
-[ext_resource type="PackedScene" uid="uid://bpfw8grqkphbc" path="res://Scenes/HealthComponent.tscn" id="3_sv1en"]
+[ext_resource type="PackedScene" uid="uid://bpb2i83abfgfl" path="res://Scenes/Components/HurtboxComponent.tscn" id="3_1u7tg"]
+[ext_resource type="PackedScene" uid="uid://bpfw8grqkphbc" path="res://Scenes/Components/HealthComponent.tscn" id="3_sv1en"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7pxhf"]
 radius = 43.0

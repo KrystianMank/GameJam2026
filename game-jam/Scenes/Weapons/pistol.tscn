@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://clr6283av30f0"]
+
+[ext_resource type="Script" uid="uid://cvja5hb58m0nh" path="res://Scripts/Weapons/Pistol.cs" id="1_olife"]
+[ext_resource type="PackedScene" uid="uid://be8qp61r15cll" path="res://Scenes/Components/HitboxComponent.tscn" id="2_4x5l7"]
+[ext_resource type="Texture2D" uid="uid://pxl5i1o3ntm7" path="res://pistol.png" id="3_2ugm8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7pxhf"]
+size = Vector2(25, 25)
+
+[sub_resource type="Animation" id="Animation_ui64p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.4901161e-08]
+}
+
+[sub_resource type="Animation" id="Animation_mix3b"]
+resource_name = "shoot"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-1.4901161e-08, -0.5235988, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1nf8w"]
+_data = {
+&"RESET": SubResource("Animation_ui64p"),
+&"attack": SubResource("Animation_mix3b")
+}
+
+[node name="Pistol" type="Area2D" unique_id=1010052989 node_paths=PackedStringArray("AnimationPlayer", "HitboxComponent")]
+script = ExtResource("1_olife")
+AnimationPlayer = NodePath("AnimationPlayer")
+HitboxComponent = NodePath("HitboxComponent")
+
+[node name="HitboxComponent" parent="." unique_id=1502605101 instance=ExtResource("2_4x5l7")]
+
+[node name="Node" type="Node2D" parent="." unique_id=320214630]
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node" unique_id=386372966]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_2ugm8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1356213155]
+shape = SubResource("RectangleShape2D_7pxhf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=701124443]
+libraries/ = SubResource("AnimationLibrary_1nf8w")

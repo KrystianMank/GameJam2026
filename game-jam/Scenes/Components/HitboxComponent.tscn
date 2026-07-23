@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://be8qp61r15cll"]
 
-[ext_resource type="Script" uid="uid://b48te057bnx1s" path="res://Scripts/HitboxComponent.cs" id="1_85f2a"]
+[ext_resource type="Script" uid="uid://b48te057bnx1s" path="res://Scripts/Components/HitboxComponent.cs" id="1_85f2a"]
 
 [node name="HitboxComponent" type="Node" unique_id=1502605101]
 script = ExtResource("1_85f2a")

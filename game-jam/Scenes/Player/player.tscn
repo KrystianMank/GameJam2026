@@ -2,9 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dsxlhlbil5u0w" path="res://Scripts/PlayerController.cs" id="1_4flbx"]
 [ext_resource type="Texture2D" uid="uid://cbfn53mpb7grs" path="res://Rocket_straight.png" id="2_onrkg"]
-[ext_resource type="Script" uid="uid://ba1akdlxnanbs" path="res://Scripts/Sword.cs" id="3_mtuoh"]
-[ext_resource type="Texture2D" uid="uid://d27wuqy1bmjfe" path="res://sword.png" id="3_xpcdj"]
-[ext_resource type="PackedScene" uid="uid://be8qp61r15cll" path="res://Scenes/HitboxComponent.tscn" id="5_htcer"]
+[ext_resource type="PackedScene" uid="uid://clr6283av30f0" path="res://Scenes/Weapons/pistol.tscn" id="3_xpcdj"]
+[ext_resource type="PackedScene" uid="uid://bj25k1pwrrgcf" path="res://Scenes/Weapons/projectile.tscn" id="4_mtuoh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7pxhf"]
 radius = 15.0
@@ -13,8 +12,6 @@ height = 50.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ccwub"]
 radius = 24.0
 height = 72.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7pxhf"]
 
 [node name="Player" type="CharacterBody2D" unique_id=414978085]
 script = ExtResource("1_4flbx")
@@ -30,18 +27,7 @@ texture = ExtResource("2_onrkg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=961584707]
 shape = SubResource("CapsuleShape2D_ccwub")
 
-[node name="Sword" type="Area2D" parent="." unique_id=1186653017 node_paths=PackedStringArray("HitboxComponent")]
-position = Vector2(25, 0)
-script = ExtResource("3_mtuoh")
-HitboxComponent = NodePath("HitboxComponent")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Sword" unique_id=786588331]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_xpcdj")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sword" unique_id=216052983]
-shape = SubResource("RectangleShape2D_7pxhf")
-
-[node name="HitboxComponent" parent="Sword" unique_id=1502605101 instance=ExtResource("5_htcer")]
+[node name="Weapon" parent="." unique_id=1010052989 instance=ExtResource("3_xpcdj")]
+ProjectileScene = ExtResource("4_mtuoh")
 
 [connection signal="area_entered" from="Area2D" to="." method="OnArea2DAreaEntered"]

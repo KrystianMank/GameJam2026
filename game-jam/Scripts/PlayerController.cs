@@ -11,11 +11,11 @@ public partial class PlayerController : CharacterBody2D
 	{
 		if (Input.IsActionJustPressed("ui_left"))
 		{
-			GetNode<Sword>("Sword").Position = new Vector2(-25, 0);
+			GetNode<Weapon>("Weapon").Position = new Vector2(-25, 0);
 		}
 		if (Input.IsActionJustPressed("ui_right"))
 		{
-			GetNode<Sword>("Sword").Position = new Vector2(25, 0);
+			GetNode<Weapon>("Weapon").Position = new Vector2(25, 0);
 		}
 	}
 
@@ -57,21 +57,11 @@ public partial class PlayerController : CharacterBody2D
 		Velocity = velocity;
 		MoveAndSlide();
 	}
-	public async void OnArea2DAreaEntered(Area2D area)
+	public void OnArea2DAreaEntered(Area2D area)
 	{
 		if(area.GetParent() is StaticBody2D)
 		{
 			TouchingWall = true;
-			var velo = Velocity;
-			var touchPosition = Position;
-
-			//Set(CharacterBody2D.PropertyName.Velocity, Vector2.Zero);
-			
-			// SetPhysicsProcess(false);
-
-			// await ToSignal(GetTree().CreateTimer(1d), Timer.SignalName.Timeout);
-
-			// SetPhysicsProcess(true);
 		}
 	}
 }

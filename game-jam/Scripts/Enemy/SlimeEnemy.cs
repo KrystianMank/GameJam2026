@@ -29,7 +29,7 @@ public partial class SlimeEnemy : Enemy
             GD.Print("wall");
             ReverseDirection();
         }
-        if(area is Sword sword)
+        if(area is Sword sword && sword.HitboxComponent.Active)
         {
             HurtboxComponent.DealDamage(sword.HitboxComponent.Damage);
         }
