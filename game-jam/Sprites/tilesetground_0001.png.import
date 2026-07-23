@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbfn53mpb7grs"
-path="res://.godot/imported/Rocket_straight.png-372238a6e67e1a45a3aff38dd5010e0e.ctex"
+uid="uid://b48vrmj6xc622"
+path="res://.godot/imported/tilesetground_0001.png-a7bbc74c73c28326dc999650c56dd3e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Rocket_straight.png"
-dest_files=["res://.godot/imported/Rocket_straight.png-372238a6e67e1a45a3aff38dd5010e0e.ctex"]
+source_file="res://Sprites/tilesetground_0001.png"
+dest_files=["res://.godot/imported/tilesetground_0001.png-a7bbc74c73c28326dc999650c56dd3e0.ctex"]
 
 [params]
 
